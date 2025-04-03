@@ -1,0 +1,148 @@
+//Classes em Dart
+As classes são separadas em Atributos, Construtores e Métodos
+
+Atributos privados são iniciados com _ (underscore)
+late significa o atributo que será inicializado mais tarde
+Variável publica não tem underscore
+
+Construtor padrão/default
+Objetivo do construtor é inicializar os atributos
+
+Propriedade é um metodo que se comporta como um atributo e é usado para encapsular o acesso a um atributo
+
+Caso seja necessario aplicar uma regra de negocio, podemos usar o metodo setter / getter nativos da linguagem
+  --torna o atributo privado
+  --implementa o get/set
+
+Construtor com parametro
+  --Ao usar o this.matricula no parametro, não precisa inicializar o atributo dentro do corpot do construtor
+
+Construtor nomeado
+  --tem um nome diferente do padrão
+  --é usado para criar objetos de forma diferente
+
+Instanciar
+  --alocar memoria para criar um objeto da classe
+
+Tipo referencia
+  --todo objeto é um tipo referencia
+
+===================Exemplo================================
+//Exemplo de classe em dart
+class Aluno {
+  //Atributo privado
+  late String _nome;
+  
+  //Atributo Publico
+  int matricula = 0;
+  
+  //Propriedade
+  
+  int _nota1 = 0;
+  
+  int get nota1 {
+    return _nota1;
+  }
+  
+  set nota1(int nota) {
+    if (nota >= 0 && nota <= 10) {
+      _nota1 = nota;
+    } else{
+      print("Nota invalida");
+    }
+  }
+  
+  int _nota2 = 0;
+  
+  int get nota2 {
+    return _nota2;
+  }
+  
+  set nota2(int nota) {
+    if (nota >= 0 && nota <= 10) {
+      _nota2 = nota;
+    } else{
+      print("Nota invalida");
+    }
+  }
+  
+  //Construtores
+  //Aluno(){
+//    _nome = ""; //Precisam ser inicializado por ser late
+//   matricula = 10;
+//    _nota1 = 0;
+//  }
+  
+  //Construtor com parametros
+  Aluno(String nome, this.matricula){
+    _nome = nome.toUpperCase();
+    //this.matricula = matricula;
+  }
+  
+  //Construtor nomeado
+  Aluno.comNota(String nome, this.matricula, this._nota1) {
+    _nome = nome.toUpperCase();
+  }
+  
+  //Métodos
+  
+  //definir o nome do aluno
+  //set: metodo mutante
+  void setNome(String nome) {
+    _nome= nome.toUpperCase();
+  }
+  
+  //obter o nome do aluno
+  //get: metodo acessor
+  String getNome(){
+    return _nome;
+  }
+  
+  //Metodo para imprimir os dados do aluno
+  void imprimir() {
+    print("Nome: $_nome");
+    print("Matricula: $matricula");
+    print("Nota: $nota1");
+    print("Nota: $nota2");
+  }
+  
+  //Metodo para calcular a media do aluno
+  double get media { //somente leitura
+    return(nota1 + nota2) / 2.0;
+  }
+  
+  double calcularMedia(){
+    return(nota1 + nota2) / 2.0;
+  }
+  
+  //metodo para verificar se o aluno esta aprovado
+  String getStatus(){
+    if (media >= 7.0){
+      return "Aprovado";
+    } else if (media >= 4.0) {
+      return "Final";
+    } else {
+      return "Reprovado";
+    }
+  }
+}
+
+//Função principal
+// - é o ponto de entrada do programa
+void main(){
+  Aluno aluno1 = Aluno("Homer", 123);
+  var aluno2 = Aluno("Bart", 456);
+  
+  var aluno3 = Aluno.comNota("Lisa", 798, 10);
+  
+  //Chamada de metodos
+  aluno1.imprimir();
+  aluno2.imprimir();
+  aluno3.imprimir();
+  
+  //Acessando atributos via propriedades
+  aluno1.nota1 = 8;
+  aluno1.nota2 = 9;
+  print("Media aluno 1: ${aluno1.media}");
+   
+}
