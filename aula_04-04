@@ -1,0 +1,72 @@
+//ex1
+class Produto {
+  String nomeProduto;
+  double valor;
+  int quantidade;
+  
+  Produto(this.nomeProduto, this.valor, this.quantidade);
+  
+  void mostraProduto(){
+    print('Produto: $nomeProduto');
+    print('Valor: $valor');
+    print('Quantidade: $quantidade');
+  }
+}
+
+void main(){
+  Produto produto1 = Produto('PC Gamer', 5000.0, 15);
+  produto1.mostraProduto();
+  
+  Produto produto2 = Produto('iPhone', 6499.99, 20);
+  produto2.mostraProduto();
+}
+
+//ex2
+class Funcionario {
+  String nome;
+  String cargo;
+  double salario;
+  String hobbie = '';
+  
+  Funcionario(this.nome, this.cargo, this.salario);
+  
+  Funcionario.perfil(this.nome, this.cargo, this.salario, [this.hobbie = '']);
+  
+  void mostraFuncionario(){
+    print('Nome: $nome');
+    print('Cargo: $cargo');
+    print('Salario: $salario');
+    print('Hobbie: $hobbie');
+    
+  }
+}
+
+void main(){
+  Funcionario funcionario1 = Funcionario.perfil('Matheus', 'Dev', 3500.0, 'Futebol');
+  funcionario1.mostraFuncionario();
+  
+  Funcionario funcionario2 = Funcionario('Ana', 'Gerente', 7500.0);
+  funcionario2.mostraFuncionario();
+}
+
+//Ex3
+class Carro {
+  String? marca;
+  String? modelo;
+  int? ano;
+
+  Carro({this.marca = 'Desconhecido', this.modelo = 'Genérico', this.ano});
+
+  void mostraCarro() {
+    print('Marca: $marca');
+    print('Modelo: $modelo');
+    print('Ano: $ano');
+  }
+}
+
+void main() {
+  Carro c1 = Carro(marca: 'Fiat', modelo: 'Uno', ano: 1999);
+  c1.mostraCarro();
+  Carro c2 = Carro();
+  c2.mostraCarro();
+}
