@@ -20,8 +20,8 @@ Column(
     Text('Rodapé'),
   ],
 )
-
-## 2 - Row
+````
+## 2. Row
 
 **Descrição**:
 Organiza widgets horizontalmente em uma única linha.
@@ -30,6 +30,7 @@ Organiza widgets horizontalmente em uma única linha.
 Útil para criar barras superiores, colocar textos e botões lado a lado, como nome do usuário + botão "Seguir".
 
 **Como Utilizar**:
+````dart
 Row(
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: [
@@ -37,3 +38,136 @@ Row(
     TextButton(onPressed: () {}, child: Text('Seguir')),
   ],
 )
+````
+
+## 3. SingleChildScrollView com scrollDirection: Axis.horizontal
+
+**Descrição**:  
+Permite rolagem lateral de um único filho.
+
+**Aplicações**:  
+Barras de stories, carrosséis de imagens ou ícones.
+
+**Como usar**:
+```dart
+SingleChildScrollView(
+  scrollDirection: Axis.horizontal,
+  child: Row(
+    children: [Widget1(), Widget2(), Widget3()],
+  ),
+)
+````
+
+## 4. Expanded
+
+**Descrição**:  
+Expande um widget filho para ocupar o espaço restante.
+
+**Aplicações**:  
+Usado para preencher a tela com uma lista ou outro widget.
+
+**Como usar**:
+```dart
+Expanded(
+  child: ListView(children: [/* conteúdo */]),
+)
+````
+
+## 5. Stack com Positioned
+
+**Descrição**:  
+Empilha widgets e permite posicioná-los sobrepostos.
+
+**Aplicações**:  
+Usado para colocar um ícone (como play) sobre uma imagem.
+
+**Como usar**:
+```dart
+Stack(
+  children: [
+    Image.asset('img.jpg'),
+    Positioned(top: 8, right: 8, child: Icon(Icons.play_circle)),
+  ],
+)
+````
+
+## 6. Wrap
+
+**Descrição**:  
+Organiza widgets em várias linhas quando o espaço acabar.
+
+**Aplicações**:  
+Exibir hashtags, botões, chips com quebra de linha automática
+
+**Como usar**:
+```dart
+Wrap(
+  spacing: 6,
+  children: [
+    Chip(label: Text('#Flutter')),
+    Chip(label: Text('#Dart')),
+  ],
+)
+````
+
+## 7. Padding
+
+**Descrição**:  
+Adiciona espaço interno ao redor do widget.
+
+**Aplicações**:  
+Separar visualmente elementos para melhor legibilidade.
+
+**Como usar**:
+```dart
+Padding(
+  padding: EdgeInsets.all(16),
+  child: Text('Texto com espaço'),
+)
+````
+
+## 8. SizedBox
+
+**Descrição**:  
+Espaço fixo entre widgets.
+
+**Aplicações**:  
+Controlar altura ou largura entre componentes.
+
+**Como usar**:
+```dart
+SizedBox(height: 12)
+````
+
+## 9. Align
+
+**Descrição**:  
+Alinha um widget em uma posição específica dentro de seu espaço.
+
+**Aplicações**:  
+Alinhar elementos sem usar Row ou Column.
+
+**Como usar**:
+```dart
+Align(
+  alignment: Alignment.centerRight,
+  child: Text('Texto alinhado'),
+)
+````
+
+## 10. Container
+
+**Descrição**:  
+Caixa genérica usada para estilizar, colorir e agrupar widgets.
+
+**Aplicações**:  
+Blocos visuais, cartões, molduras.
+
+**Como usar**:
+```dart
+Container(
+  padding: EdgeInsets.all(8),
+  color: Colors.grey[200],
+  child: Text('Conteúdo'),
+)
+````
