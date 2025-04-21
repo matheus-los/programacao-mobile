@@ -171,3 +171,140 @@ Container(
   child: Text('Conteúdo'),
 )
 ````
+
+## 11. ListView.builder
+
+**Descrição**:  
+Widget que cria listas de forma dinâmica e eficiente.
+
+**Aplicações**:  
+Exibir listas com muitos itens, como destinos de viagem.
+
+**Como usar**:
+```dart
+ListView.builder(
+  itemCount: destinos.length,
+  itemBuilder: (context, index) {
+    return Text(destinos[index]);
+  },
+)
+````
+
+## 12. Card
+
+**Descrição**:  
+Componente visual com borda, sombra e padding.
+
+**Aplicações**:  
+Blocos de conteúdo como cartões de destinos.
+
+**Como usar**:
+```dart
+Card(
+  elevation: 4,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(12),
+  ),
+  child: Padding(
+    padding: EdgeInsets.all(8),
+    child: Text('Conteúdo do card'),
+  ),
+)
+````
+
+## 13. IconButton
+
+**Descrição**:  
+Botão com ícone clicável.
+
+**Aplicações**:  
+Favoritar, compartilhar ou executar ações rápidas.
+
+**Como usar**:
+```dart
+IconButton(
+  icon: Icon(Icons.favorite),
+  onPressed: () {
+    // ação ao clicar
+  },
+)
+````
+
+## 14. Hero
+
+**Descrição**:  
+Animação suave entre widgets em diferentes telas com o mesmo tag.
+
+**Aplicações**:  
+Transição de imagem entre a tela principal e a tela de detalhes.
+
+**Como usar**:
+```dart
+Hero(
+  tag: 'imagem1',
+  child: Image.asset('img.jpg'),
+)
+````
+
+## 15. ClipRRect
+
+**Descrição**:  
+Permite aplicar bordas arredondadas a widgets, como imagens.
+
+**Aplicações**:  
+Estilizar imagens em cards com cantos arredondados.
+
+**Como usar**:
+```dart
+ClipRRect(
+  borderRadius: BorderRadius.circular(16),
+  child: Image.asset('img.jpg'),
+)
+````
+
+## 16. Scaffold
+
+**Descrição**:  
+Estrutura básica da tela com appBar, body e outros elementos.
+
+**Aplicações**:  
+Criar telas completas com layout padrão do Flutter.
+
+**Como usar**:
+```dart
+Scaffold(
+  appBar: AppBar(title: Text('Título')),
+  body: Text('Conteúdo'),
+)
+````
+
+## 17. AppBar
+
+**Descrição**:  
+Barra superior da tela com título e ações.
+
+**Aplicações**:  
+Identificação da tela e navegação.
+
+**Como usar**:
+```dart
+AppBar(
+  title: Text('Catálogo'),
+)
+````
+
+## 18. Navigator + MaterialPageRoute
+
+**Descrição**:  
+Gerencia a navegação entre telas.
+
+**Aplicações**:  
+Levar o usuário da lista de destinos para a tela de detalhes.
+
+**Como usar**:
+```dart
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (_) => OutraTela()),
+);
+````
