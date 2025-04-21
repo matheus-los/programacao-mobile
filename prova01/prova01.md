@@ -308,3 +308,70 @@ Navigator.push(
   MaterialPageRoute(builder: (_) => OutraTela()),
 );
 ````
+
+## 19. TextField
+
+**Descrição**:  
+Campo de entrada de texto do usuário.
+
+**Aplicações**:  
+Coletar informações como peso e altura.
+
+**Como usar**:
+```dart
+TextField(
+  decoration: InputDecoration(
+    labelText: 'Peso',
+    border: OutlineInputBorder(),
+  ),
+)
+````
+
+## 20. ElevatedButton.icon
+
+**Descrição**:  
+Botão com ícone e rótulo, elevado com estilo customizável.
+
+**Aplicações**:  
+Ação de cálculo, destaque de comandos principais.
+
+**Como usar**:
+```dart
+ElevatedButton.icon(
+  onPressed: () {},
+  icon: Icon(Icons.favorite),
+  label: Text('Calcular'),
+)
+````
+
+## 21. Text
+
+**Descrição**:  
+Exibe informações em texto simples ou estilizado.
+
+**Aplicações**:  
+Mostrar o resultado do IMC e sua classificação.
+
+**Como usar**:
+```dart
+Text(
+  'Seu IMC é: 24.5',
+  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+)
+````
+
+## 22. Image.network
+
+**Descrição**:  
+Carrega e exibe imagens diretamente de URLs externas.
+
+**Aplicações**:  
+Mostrar ícones ilustrativos online.
+
+**Como usar**:
+```dart
+Image.network(
+  'https://exemplo.com/imagem.png',
+  height: 80,
+)
+````
