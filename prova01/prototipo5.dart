@@ -20,7 +20,6 @@ class InstagramClone extends StatelessWidget {
         backgroundColor: Colors.blueAccent[100],
         body: Column(
           children: [
-            // Stories (scroll horizontal)
             Container(
               height: 100,
               padding: EdgeInsets.symmetric(vertical: 8),
@@ -47,7 +46,6 @@ class InstagramClone extends StatelessWidget {
               ),
             ),
 
-            // Feed (scroll vertical)
             Expanded(
               child: ListView.builder(
                 itemCount: 5,
@@ -81,7 +79,6 @@ class PostWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Nome do usuário + botão seguir
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -94,7 +91,7 @@ class PostWidget extends StatelessWidget {
           ),
 
           SizedBox(height: 8),
-          // Imagem com ícone em cima usando Stack
+
           Stack(
             children: [
               Container(
@@ -104,7 +101,7 @@ class PostWidget extends StatelessWidget {
                   color: Colors.grey[300],
                   image: DecorationImage(
                     image: NetworkImage(
-                        'https://www.gstatic.com/flutter-onestack-prototype/genui/example_1.jpg'), // Placeholder image
+                        'https://www.gstatic.com/flutter-onestack-prototype/genui/example_1.jpg'), 
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(12),
@@ -120,7 +117,6 @@ class PostWidget extends StatelessWidget {
 
           SizedBox(height: 12),
 
-          // Ícones de interação
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -132,7 +128,6 @@ class PostWidget extends StatelessWidget {
 
           SizedBox(height: 12),
 
-          // Hashtags com Wrap
           Wrap(
             spacing: 6,
             children: [
