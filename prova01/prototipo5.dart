@@ -16,6 +16,7 @@ class InstagramClone extends StatelessWidget {
         appBar: AppBar(
           title: Text('InstaClone'),
           backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(color: Colors.black, fontSize: 20),
         ),
         backgroundColor: Colors.blueAccent[100],
         body: Column(
@@ -34,7 +35,7 @@ class InstagramClone extends StatelessWidget {
                           CircleAvatar(
                             radius: 30,
                             backgroundImage: NetworkImage(
-                                'https://www.gstatic.com/flutter-onestack-prototype/genui/example_1.jpg'),
+                                'https://randomuser.me/api/portraits/men/$index.jpg'),
                           ),
                           SizedBox(height: 4),
                           Text('User $index', style: TextStyle(fontSize: 12)),
@@ -45,12 +46,11 @@ class InstagramClone extends StatelessWidget {
                 ),
               ),
             ),
-
             Expanded(
               child: ListView.builder(
                 itemCount: 5,
                 itemBuilder: (context, index) {
-                  return PostWidget(userName: 'User $index');
+                  return PostWidget(userName: 'User $index', postIndex: index,);
                 },
               ),
             ),
@@ -63,8 +63,9 @@ class InstagramClone extends StatelessWidget {
 
 class PostWidget extends StatelessWidget {
   final String userName;
+  final int postIndex;
 
-  const PostWidget({Key? key, required this.userName}) : super(key: key);
+  const PostWidget({Key? key, required this.userName, required this.postIndex}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -83,15 +84,17 @@ class PostWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(userName, style: TextStyle(fontWeight: FontWeight.bold)),
-              TextButton(
+              ElevatedButton(
                 onPressed: () {},
-                child: Text('Seguir', style: TextStyle(color: Colors.white)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                ),
+                child: Text('Seguir'),
               ),
             ],
           ),
-
           SizedBox(height: 8),
-
           Stack(
             children: [
               Container(
@@ -101,7 +104,7 @@ class PostWidget extends StatelessWidget {
                   color: Colors.grey[300],
                   image: DecorationImage(
                     image: NetworkImage(
-                        'https://www.gstatic.com/flutter-onestack-prototype/genui/example_1.jpg'), 
+                        'https://picsum.photos/seed/post$postIndex/600/300', scale: 1.0),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(12),
@@ -114,9 +117,7 @@ class PostWidget extends StatelessWidget {
               ),
             ],
           ),
-
           SizedBox(height: 12),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -125,9 +126,7 @@ class PostWidget extends StatelessWidget {
               Icon(Icons.send_outlined),
             ],
           ),
-
           SizedBox(height: 12),
-
           Wrap(
             spacing: 6,
             children: [
