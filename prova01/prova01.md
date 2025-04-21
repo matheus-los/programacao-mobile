@@ -3,15 +3,16 @@
 - Mateus Henrique Lima
 - Matheus Henrique Miranda Lós
 
-## 1 - Column
+## 1. Column
 
-**Descrição**:
+**Descrição**:  
 Componente que organiza widgets verticalmente, de cima para baixo.
 
-**Aplicações**:
+**Aplicações**:  
 Ideal para estruturar telas em blocos verticais, como cabeçalhos, seções e rodapés.
 
 **Como usar**:
+```dart
 Column(
   children: [
     Text('Topo'),
