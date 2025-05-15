@@ -101,7 +101,7 @@ class _TesouroGameState extends State<TesouroGame> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: GridView.count(
-                  crossAxisCount: 5,
+                  crossAxisCount: 4,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   children: List.generate(20, (index) {
@@ -111,6 +111,7 @@ class _TesouroGameState extends State<TesouroGame> {
                           : null,
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.zero,
+                        backgroundColor: Colors.yellow
                       ),
                       child: Text('${index + 1}'),
                     );
@@ -123,14 +124,13 @@ class _TesouroGameState extends State<TesouroGame> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  Text('Novo Jogo', style: TextStyle(fontSize: 16)),
                   SizedBox(height: 8),
                   ElevatedButton(
                     onPressed: iniciarJogo,
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(horizontal: 40, vertical: 12),
                     ),
-                    child: Text('🔁 Reiniciar'),
+                    child: Text('🔁 Jogar novamente'),
                   ),
                 ],
               ),
